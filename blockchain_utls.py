@@ -1,5 +1,4 @@
 import requests
-import PySimpleGUI as sg
 import hashlib as hl
 from urllib import urlencode
 import socket
