@@ -4,7 +4,7 @@ import socket
 import rsa
 
 
-class DynamicMain:
+class API:
     ip = socket.gethostbyname(socket.gethostname())
     def __init__(self):
         self.ip = ip if 'http://' in ip else 'http://'+ip
@@ -32,6 +32,11 @@ class DynamicMain:
                                 json = params)
         if code == 400:
             return "Missing values"
+
+    def Resolve(self):
+        _, code = requests.get('/',join(self.ip, '/nodes/resolve'))
+        if code == 200:
+            return
 
     def _authorize_transaction(self, trans_msg, private_key):
         if self.public_key is None:
