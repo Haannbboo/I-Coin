@@ -291,6 +291,12 @@ def consensus():
     return jsonify(response), 200
 
 
+@app.route('/wallet', methods=['POST'])
+def wallet():  # see your own transactions and wallet status
+    pass
+    # return jsonify(response), 201
+
+
 if __name__ == '__main__':
     '''
     from argparse import ArgumentParser
